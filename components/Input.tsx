@@ -26,6 +26,9 @@ export const Input: React.FC<InputProps> = ({
       setValue('');
       callback(value);
     }
+    if (e.metaKey && e.key === 'k') {
+      callback('clear');
+    }
   };
 
   return (
