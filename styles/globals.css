@@ -11,16 +11,56 @@ a {
   text-decoration: none;
 }
 
+p {
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
 * {
   box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
+body {
+  color: #0e0e0e;
+  background: linear-gradient(-45deg, #e38b70, #e1b76e);
+}
+
+@media (prefers-color-scheme: light) {
   html {
-    color-scheme: dark;
+    color-scheme: light;
   }
   body {
-    color: white;
-    background: black;
+    color: #0e0e0e;
+    background: linear-gradient(-45deg, #e38b70, #e1b76e);
   }
+}
+
+@font-face {
+  font-family: 'SF';
+  src: url('../public/assets/fonts/sf/SFUIText-Regular.otf');
+}
+
+@font-face {
+  font-family: 'SF Medium';
+  src: url('../public/assets/fonts/sf/SFUIText-Medium.otf');
+}
+
+@font-face {
+  font-family: 'SF Bold';
+  src: url('../public/assets/fonts/sf/SFUIText-Bold.otf');
+}
+
+@font-face {
+  font-family: 'SF Mono';
+  src: url('../public/assets/fonts/sf/SFMonoRegular.otf');
+}
+
+@font-face {
+  font-family: 'SF Mono Medium';
+  src: url('../public/assets/fonts/sf/SFMonoMedium.otf');
+}
+
+@font-face {
+  font-family: 'SF Mono Bold';
+  src: url('../public/assets/fonts/sf/SFMonoBold.otf');
 }
