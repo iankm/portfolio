@@ -1,11 +1,14 @@
-import { useEffect, useState, FC, ReactNode } from 'react';
+import { useEffect, useState } from 'react';
 
 interface DelayedProps {
   waitBeforeShow: number;
-  children?: ReactNode;
+  children?: any;
 }
 
-export const Delayed: FC<DelayedProps> = ({ waitBeforeShow, children }) => {
+export const Delayed: React.FC<DelayedProps> = ({
+  waitBeforeShow,
+  children,
+}) => {
   const [hidden, setHidden] = useState(true);
 
   useEffect(() => {
