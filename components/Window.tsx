@@ -33,6 +33,7 @@ export const Window: React.FC<WindowProps> = ({
 
   return (
     <div
+      tabIndex={1}
       onClick={focusChild}
       className={`${styles.window} ${
         expanded ? styles.expanded : styles.condensed

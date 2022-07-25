@@ -20,9 +20,26 @@ p {
   box-sizing: border-box;
 }
 
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 body {
   color: #0e0e0e;
   background: linear-gradient(-45deg, #e38b70, #e1b76e);
+  overflow: hidden;
+  background-size: 200% 200%;
+  animation: gradient 15s ease-in-out infinite;
+  -webkit-animation: gradient 15s ease infinite;
+  -moz-animation: gradient 15s ease infinite;
 }
 
 @media (prefers-color-scheme: light) {
