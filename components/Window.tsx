@@ -5,6 +5,8 @@ import Input from '../components/Input';
 import Delayed from '../components/Delayed';
 import History from './History';
 import styles from '../styles/Home.module.css';
+import { Command } from '../types/command';
+import { useFolderContext } from '../contexts/FolderContext';
 
 interface WindowProps {
   time: number;
@@ -24,8 +26,9 @@ export const Window: React.FC<WindowProps> = ({
   setShowButton,
 }) => {
   const childInputRef = useRef(null);
+  const { folder } = useFolderContext();
   const [expanded, setExpanded] = useState<boolean>(false);
-  const [commands, setCommands] = useState<string[]>([]);
+  const [commands, setCommands] = useState<Command[]>([]);
 
   const focusChild = () => {
     childInputRef.current && childInputRef.current.focus();
@@ -105,7 +108,8 @@ export const Window: React.FC<WindowProps> = ({
               if (value === 'clear') {
                 setCommands([]);
               } else {
-                setCommands([...commands, value]);
+                let newCommand = { name: value, folder };
+                setCommands([...commands, newCommand]);
               }
             }}
           />

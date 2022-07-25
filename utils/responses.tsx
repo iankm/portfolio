@@ -1,7 +1,16 @@
 import styles from '../styles/Home.module.css';
 
 export const helpMenu = () => {
-  return <p className={styles.text}>linkedin parcel</p>;
+  return <p className={styles.text}>about linkedin parcel clear</p>;
+};
+
+export const list = (folder: string) => {
+  switch (folder) {
+    case '~':
+      return <p className={styles.text}>..</p>;
+    case '..':
+      return <p className={styles.text}>music meme ian</p>;
+  }
 };
 
 export const redirectPrompt = (dest: string) => {
@@ -10,6 +19,18 @@ export const redirectPrompt = (dest: string) => {
 
 export const commandNotFound = (command: string) => {
   return <p className={styles.text}>not sure wtf "{command}" is ong fr fr</p>;
+};
+
+export const comingSoon = () => {
+  return <p className={styles.text}>Command not ready yet. But it's coming!</p>;
+};
+
+export const needArg = () => {
+  return (
+    <p className={styles.text}>
+      yo dawg, i need a destination to perform this command. try cd ..
+    </p>
+  );
 };
 
 const getSpotifyUrl = (command: string) => {

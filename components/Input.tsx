@@ -1,4 +1,5 @@
 import { forwardRef, useState } from 'react';
+import { useFolderContext } from '../contexts/FolderContext';
 import styles from '../styles/Home.module.css';
 import { redirect } from '../utils/responses';
 
@@ -15,7 +16,8 @@ export const Input: React.FC<InputProps> = ({
   placeholder,
   callback,
 }) => {
-  const [value, setValue] = useState('');
+  const { folder } = useFolderContext();
+  const [value, setValue] = useState<string>('');
 
   const handleKeyDown = (e: any, value: string) => {
     if (e.key === 'Enter') {
@@ -39,7 +41,7 @@ export const Input: React.FC<InputProps> = ({
           whiteSpace: 'nowrap',
         }}
       >
-        ➞ ~
+        {`➞ ${folder}`}
       </div>
       {
         <input

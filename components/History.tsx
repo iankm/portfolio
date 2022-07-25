@@ -1,14 +1,15 @@
 import Footprint from './Footprint';
 import { prompts } from '../utils/prompts';
+import { Command } from '../types/command';
 
 interface HistoryProps {
-  commands: string[];
+  commands: Command[];
 }
 
 export const History: React.FC<HistoryProps> = ({ commands }) => {
   return (
     <>
-      {commands.map((command: string) => {
+      {commands.map((command: Command) => {
         return (
           <>
             <Footprint command={command} />
