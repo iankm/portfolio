@@ -45,6 +45,7 @@ export const Input: React.FC<InputProps> = ({
         <input
           ref={customRef}
           autoFocus={autofocus}
+          autoCapitalize="off"
           value={value}
           placeholder={placeholder}
           onChange={(e: any) => setValue(e.target.value)}
