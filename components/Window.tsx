@@ -1,9 +1,9 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import Moment from 'react-moment';
 import { Folder } from 'phosphor-react';
 import Input from '../components/Input';
 import Delayed from '../components/Delayed';
-import Prompts from '../components/Prompts';
+import History from './History';
 import styles from '../styles/Home.module.css';
 
 interface WindowProps {
@@ -23,11 +23,17 @@ export const Window: React.FC<WindowProps> = ({
   setMinimize,
   setShowButton,
 }) => {
+  const childInputRef = useRef(null);
   const [expanded, setExpanded] = useState<boolean>(false);
   const [commands, setCommands] = useState<string[]>([]);
 
+  const focusChild = () => {
+    childInputRef.current && childInputRef.current.focus();
+  };
+
   return (
     <div
+      onClick={focusChild}
       className={`${styles.window} ${
         expanded ? styles.expanded : styles.condensed
       } ${hide && styles.hidden} ${minimize && styles.minimize}`}
@@ -64,7 +70,7 @@ export const Window: React.FC<WindowProps> = ({
         <div className={styles.empty} />
       </div>
       {/* BODY */}
-      <div className={`${styles.windowbody} ${hide && styles.hidden}`}>
+      <div className={`${styles.windowbody} ${minimize && styles.hidden}`}>
         <p className={styles.text}>
           <Moment format={'ddd MMM D HH:mm:ss'}>{time}</Moment>
         </p>
@@ -76,6 +82,9 @@ export const Window: React.FC<WindowProps> = ({
             <a
               className={styles.textlink}
               href="https://parcel.so"
+              onClick={(e: any) => {
+                e.stopPropagation();
+              }}
               rel="noreferrer"
               target="_blank"
             >
@@ -86,9 +95,10 @@ export const Window: React.FC<WindowProps> = ({
         <Delayed waitBeforeShow={800}>
           <p className={styles.text}>for more information, type help</p>
         </Delayed>
-        <Prompts commands={commands} />
+        <History commands={commands} />
         <Delayed waitBeforeShow={1000}>
           <Input
+            customRef={childInputRef}
             autofocus={true}
             callback={(value: string) => {
               if (value === 'clear') {

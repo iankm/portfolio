@@ -1,13 +1,16 @@
-import { useState } from 'react';
+import { forwardRef, useState } from 'react';
 import styles from '../styles/Home.module.css';
+import { redirect } from '../utils/responses';
 
 interface InputProps {
+  customRef?: React.RefObject<HTMLInputElement>;
   autofocus?: boolean;
   placeholder?: string;
   callback?: (value: string) => void;
 }
 
 export const Input: React.FC<InputProps> = ({
+  customRef,
   autofocus,
   placeholder,
   callback,
@@ -17,12 +20,7 @@ export const Input: React.FC<InputProps> = ({
   const handleKeyDown = (e: any, value: string) => {
     if (e.key === 'Enter') {
       e.preventDefault();
-      if (value === 'linkedin' || value === 'li') {
-        window.open('https://www.linkedin.com/in/ian-mukherjee/');
-      }
-      if (value === 'parcel') {
-        window.open('https://parcel.so/');
-      }
+      redirect(value);
       setValue('');
       callback(value);
     }
@@ -45,6 +43,7 @@ export const Input: React.FC<InputProps> = ({
       </div>
       {
         <input
+          ref={customRef}
           autoFocus={autofocus}
           value={value}
           placeholder={placeholder}

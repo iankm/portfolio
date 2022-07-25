@@ -17,7 +17,9 @@ export const Footprint: React.FC<FootprintProps> = ({ command }) => {
       >
         ➞ ~
       </div>
-      <span className={styles.text}>{command}</span>
+      <span className={styles.text} style={{ margin: 0, marginLeft: '1px' }}>
+        {command}
+      </span>
     </div>
   );
 };
