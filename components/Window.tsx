@@ -95,14 +95,29 @@ export const Window: React.FC<WindowProps> = ({
             </a>
           </p>
         </Delayed>
-        <Delayed waitBeforeShow={800}>
+        <Delayed waitBeforeShow={750}>
+          i am also a{' '}
+          <a
+            className={styles.textlink}
+            href="https://collectors.poap.xyz/token/6916266"
+            onClick={(e: any) => {
+              e.stopPropagation();
+            }}
+            rel="noreferrer"
+            target="_blank"
+          >
+            2023 ethereum contributor
+          </a>
+          .
+        </Delayed>
+        <Delayed waitBeforeShow={1000}>
           <p className={styles.text}>
             for more information, type{' '}
             <span className={styles.textlink}>ls</span>
           </p>
         </Delayed>
         <History commands={commands} />
-        <Delayed waitBeforeShow={1000}>
+        <Delayed waitBeforeShow={1250}>
           <Input
             customRef={childInputRef}
             autofocus={true}

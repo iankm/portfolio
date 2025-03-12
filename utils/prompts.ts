@@ -15,6 +15,8 @@ export const prompts = (command: Command) => {
       return responses.redirectPrompt('thirdweb');
     case 'parcel':
       return responses.redirectPrompt('parcel');
+    case 'twitter':
+      return responses.redirectPrompt('twitter');
     case 'ong':
       return responses.redirectPrompt('know your meme');
     case 'onrepeat':

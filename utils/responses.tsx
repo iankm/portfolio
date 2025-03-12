@@ -5,7 +5,7 @@ export const list = (folder: string) => {
     case '~':
       return (
         <p className={styles.text}>
-          .. thirdweb linkedin parcel onrepeat clear
+          .. thirdweb parcel linkedin twitter onrepeat clear
         </p>
       );
     case '..':
@@ -116,8 +116,8 @@ export const redirect = (dest: string) => {
         break;
       case 'thirdweb':
         window.open('https://thirdweb.com/');
-      case 'eliza':
-        window.open('https://github.com/');
+      case 'twitter':
+        window.open('https://x.com/ianiscooldoteth');
       case 'ong':
         window.open('https://knowyourmeme.com/memes/on-god');
         break;
