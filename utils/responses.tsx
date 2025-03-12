@@ -1,13 +1,13 @@
 import styles from '../styles/Home.module.css';
 
-export const helpMenu = () => {
-  return <p className={styles.text}>about linkedin parcel clear</p>;
-};
-
 export const list = (folder: string) => {
   switch (folder) {
     case '~':
-      return <p className={styles.text}>..</p>;
+      return (
+        <p className={styles.text}>
+          .. thirdweb linkedin parcel onrepeat clear
+        </p>
+      );
     case '..':
       return <p className={styles.text}>music meme ian</p>;
   }
@@ -35,8 +35,10 @@ export const needArg = () => {
 
 const getSpotifyUrl = (command: string) => {
   switch (command) {
-    case 'mgk':
-      return 'https://open.spotify.com/embed/album/57lgFncHBYu5E3igZnuCJK?utm_source=generator';
+    case 'mkgee':
+      return 'https://open.spotify.com/embed/album/6DlLdXBGCsSDPOV8R2pCl7?utm_source=generator';
+    case 'onrepeat':
+      return 'https://open.spotify.com/embed/playlist/37i9dQZF1EpyRrqGGxgmLe?utm_source=generator';
   }
 };
 
@@ -110,8 +112,12 @@ export const redirect = (dest: string) => {
         window.open('https://www.linkedin.com/in/ian-mukherjee/');
         break;
       case 'parcel':
-        window.open('https://parcel.so/');
+        window.open('https://linkedin.com/company/parcelnft');
         break;
+      case 'thirdweb':
+        window.open('https://thirdweb.com/');
+      case 'eliza':
+        window.open('https://github.com/');
       case 'ong':
         window.open('https://knowyourmeme.com/memes/on-god');
         break;

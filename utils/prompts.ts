@@ -8,16 +8,18 @@ export const prompts = (command: Command) => {
   const args = command.name.split(' ');
   console.log(args);
   switch (args[0]) {
-    case 'help':
-      return responses.helpMenu();
     case 'linkedin':
     case 'li':
       return responses.redirectPrompt('linkedin');
+    case 'thirdweb':
+      return responses.redirectPrompt('thirdweb');
     case 'parcel':
       return responses.redirectPrompt('parcel');
     case 'ong':
       return responses.redirectPrompt('know your meme');
-    case 'mgk':
+    case 'onrepeat':
+      return responses.spotify(command.name);
+    case 'mkgee':
       return responses.spotify(command.name);
     case 'ls':
       return responses.list(command.folder);

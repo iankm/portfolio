@@ -81,23 +81,25 @@ export const Window: React.FC<WindowProps> = ({
 
         <Delayed waitBeforeShow={500}>
           <p className={styles.text}>
-            hello my name is ian. i am the co-founder and chief product officer
-            of{' '}
+            hello my name is ian. i am a product manager at{' '}
             <a
               className={styles.textlink}
-              href="https://parcel.so"
+              href="https://thirdweb.com"
               onClick={(e: any) => {
                 e.stopPropagation();
               }}
               rel="noreferrer"
               target="_blank"
             >
-              parcel
+              thirdweb
             </a>
           </p>
         </Delayed>
         <Delayed waitBeforeShow={800}>
-          <p className={styles.text}>for more information, type help</p>
+          <p className={styles.text}>
+            for more information, type{' '}
+            <span className={styles.textlink}>help</span>
+          </p>
         </Delayed>
         <History commands={commands} />
         <Delayed waitBeforeShow={1000}>
