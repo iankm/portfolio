@@ -98,7 +98,7 @@ export const Window: React.FC<WindowProps> = ({
         <Delayed waitBeforeShow={800}>
           <p className={styles.text}>
             for more information, type{' '}
-            <span className={styles.textlink}>help</span>
+            <span className={styles.textlink}>ls</span>
           </p>
         </Delayed>
         <History commands={commands} />
